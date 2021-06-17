@@ -22,11 +22,11 @@ const loadUser = async () => {
   const jwt = await fbAuthProvider.getJWTToken();
   console.log({ jwt });
   const GET_OLD_PUBLIC_TODOS = gql`
-    query users {
-      users {
+    query getMyProfile {
+      getMyProfile {
         id
         email
-        uuid
+        name
       }
     }
   `;
@@ -35,7 +35,7 @@ const loadUser = async () => {
     query: GET_OLD_PUBLIC_TODOS,
     context: {
       headers: {
-        Authorization: jwt,
+        'access-token': jwt,
       },
     },
   });

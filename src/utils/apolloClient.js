@@ -2,7 +2,7 @@ import { ApolloClient, InMemoryCache } from '@apollo/client';
 
 const createApolloClient = () => {
   return new ApolloClient({
-    uri: 'https://food-to-have.hasura.app/v1/graphql',
+    uri: 'http://34629292b80e.ngrok.io',
     cache: new InMemoryCache(),
   });
 };
